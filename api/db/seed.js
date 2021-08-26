@@ -74,7 +74,7 @@ const allProducts = [
     name: "Anillo Rocky",
     description: "Anillo Rocky. Plata 950. Libre de Níquel",
     precio: 68990,
-    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/AnilloRocky_ANIROCK001-1_ba7435d9-b034-46f6-b5c9-6b2b9f80e3eb_700x.jpg?v=1577464478",
+    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/AnilloRocky_ANIROCK001-2_eac7aec6-ad28-4b21-9505-df0879076765_740x740.jpg?v=1577464478",
     categoria: "Anillos",
     stock: 10,
     autor: "delacons",
@@ -110,7 +110,7 @@ const allProducts = [
     description:
       "Medalla Luna con Crateres por un lado y Media Luna por el otro. Es Reversible. Plata 950. Libre de Níquel. Tamaño : 1.4 cm diametro. Incluye cadena Veneciana  o Grumet de 40 o 45 cm",
     precio: 38990,
-    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/MedallaLuna_MEDLUN001-3_377dcc6c-e5ec-4d47-b38e-679f0a75760c_900x.jpg?v=1578515865",
+    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/MedallaLuna_MEDLUN001-1_e660486b-8098-45f1-bd4f-eca447e8258f_750x750.jpg?v=1578515865",
     categoria: "Collares",
     stock: 10,
     autor: "delacons",
@@ -134,7 +134,7 @@ const allProducts = [
     description:
       "Amuleto escudo protector de todo lo malo. Plata 950. Libre de Níquel.Tamaño : 2.0 cm largo. 1.7 cm ancho. Piedra: Rubi Fasetado.  Piedra reconstituida. No incluye cadena",
     precio: 75990,
-    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/MedallaLuna_MEDLUN001-3_377dcc6c-e5ec-4d47-b38e-679f0a75760c_900x.jpg?v=1578515865",
+    img: "https://cdn.shopify.com/s/files/1/0255/7421/1646/products/image_1c0ac4d9-60cb-41c2-b45a-d738bda6c560_600x.jpg?v=1599090692",
     categoria: "Collares",
     stock: 1,
     autor: "delacons",

@@ -72,7 +72,9 @@ export default function Navbar() {
 
   return (
     <div className={classes.container}>
-      <p className={classes.logo}>FG</p>
+      <Link to="/">
+        <p className={classes.logo}>FG</p>
+      </Link>
       <p>Hello from Navbar!</p>
       <div>
         {console.log("active cart", activeCart)}
