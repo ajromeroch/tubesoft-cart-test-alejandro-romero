@@ -9,10 +9,16 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   container: {
+    height: "100vh",
     display: "flex",
-    flex: 1,
     flexDirection: "column",
-    background: "blue",
+  },
+  cardContainer: {
+    height: "100vh",
+    width: "80%",
+    display: "flex",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 });
 
@@ -40,12 +46,13 @@ export default function Home() {
   return (
     <div className={classes.container}>
       <Navbar />
-      <Card
-        products={allProducts}
-        handleClick={handleClick}
-        cart={activeCart}
-      />
-      {/* <Sidebar /> */}
+      <div className={classes.cardContainer}>
+        <Card
+          products={allProducts}
+          handleClick={handleClick}
+          cart={activeCart}
+        />
+      </div>
     </div>
   );
 }

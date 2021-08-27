@@ -9,26 +9,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { newCart } from "../store/carts";
 //import CartProducts from "../components/CartProducts";
 
+//"linear-gradient(90deg, #31708e, #5085a5, #8fc1e3)",
+// logo: {
+//   backgroundColor: "#8fc1e3", //#f7f9fb (white),
+//   height: 50,
+//   width: 50,
+//   borderRadius: 50,
+//   display: "flex",
+//   justifyContent: "center",
+//   alignItems: "center",
+//   border: "solid #f7f9fb 1px",
+//   color: "#f7f9fb ",
+//   fontWeight: "bolder",
+// },
+
 const useStyles = makeStyles({
   container: {
-    background: "linear-gradient(90deg, #31708e, #5085a5, #8fc1e3)",
+    background: "black",
+
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
   logo: {
-    backgroundColor: "#8fc1e3", //#f7f9fb (white),
-    height: 50,
-    width: 50,
-    borderRadius: 50,
+    //backgroundColor: "white",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    border: "solid #f7f9fb 1px",
-    color: "#f7f9fb ",
+    //border: "solid #f7f9fb 1px",
+    color: "white ",
     fontWeight: "bolder",
+    textDecoration: "none",
   },
   icon: {
-    color: "blue",
+    color: "white",
   },
   modal: {
     position: "fixed",
@@ -72,10 +85,10 @@ export default function Navbar() {
 
   return (
     <div className={classes.container}>
-      <Link to="/">
-        <p className={classes.logo}>FG</p>
+      <Link to="/" className={classes.logo}>
+        <p>FG Joyas</p>
       </Link>
-      <p>Hello from Navbar!</p>
+      <span>Hello from Navbar!</span>
       <div>
         {console.log("active cart", activeCart)}
         {!activeCart ? (

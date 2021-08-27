@@ -1,8 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import CancelIcon from "@material-ui/icons/Cancel";
 import ButtonsPlusMinus from "./ButtonsPlusMinus";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  container: {
+    width: "100%",
+  },
+
+  individualItem: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    border: "solid 1 black",
+    borderRadius: 10,
+  },
+  img: {
+    width: 200,
+    height: 200,
+  },
+});
 
 //aca tenemos que agregar un boton tambien que pueda "cerrar" el modal. no se si aca pero en algun lado
 export default function CartProducts({
@@ -16,8 +37,9 @@ export default function CartProducts({
   handleUpdate,
   handleCancelCart,
 }) {
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.container}>
       {actualCartId ? (
         <h1>{`Estas viendo el carro ${actualCartId}`}</h1>
       ) : (
@@ -33,8 +55,8 @@ export default function CartProducts({
         cart.map((onCart) => {
           console.log("aca llego", onCart.name);
           return (
-            <div key={onCart.id}>
-              <img src={onCart.img} alt={onCart.name} />
+            <div key={onCart.id} className={classes.individualItem}>
+              <img className={classes.img} src={onCart.img} alt={onCart.name} />
               <span>{onCart.name}</span>
               <ButtonsPlusMinus
                 cart={cart}
@@ -51,10 +73,10 @@ export default function CartProducts({
         {cart && cart.length > 0 ? (
           <div>
             <button onClick={handleSaveCart}>Guardar Carro</button>
-            {actualCartId && (
+            {actualCartId !== 0 && (
               <button onClick={handleUpdate}>Modificar Carro</button>
             )}
-            {actualCartId && (
+            {actualCartId !== 0 && (
               <button onClick={handleCancelCart}>Eliminar Carro</button>
             )}
           </div>

@@ -14,8 +14,25 @@ import {
 } from "../store/carts";
 import Navbar from "./Navbar";
 import CartProducts from "../components/CartProducts";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  container: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  },
+  cartContainer: {
+    height: "100vh",
+    width: "80%",
+    display: "flex",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+});
 
 export default function CartPage() {
+  const classes = useStyles();
   const { activeCart, allCarts, actualCartId } = useSelector(
     (store) => store.carts
   );
@@ -66,20 +83,22 @@ export default function CartPage() {
   }, []);
 
   return (
-    <div>
+    <div className={classes.container}>
       {console.log("estos son todos los carts desde arriba", allCarts)}
       <Navbar />
-      <CartProducts
-        cart={activeCart}
-        allCarts={allCarts}
-        actualCartId={actualCartId}
-        handleClick={handleClick}
-        handleCancel={handleCancel}
-        handleSaveCart={handleSaveCart}
-        handleSelection={handleSelection}
-        handleUpdate={handleUpdate}
-        handleCancelCart={handleCancelCart}
-      />
+      <div className={classes.cartContainer}>
+        <CartProducts
+          cart={activeCart}
+          allCarts={allCarts}
+          actualCartId={actualCartId}
+          handleClick={handleClick}
+          handleCancel={handleCancel}
+          handleSaveCart={handleSaveCart}
+          handleSelection={handleSelection}
+          handleUpdate={handleUpdate}
+          handleCancelCart={handleCancelCart}
+        />
+      </div>
     </div>
   );
 }

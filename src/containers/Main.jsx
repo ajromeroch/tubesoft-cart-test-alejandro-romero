@@ -13,3 +13,10 @@ export default function Main() {
     </div>
   );
 }
+
+// style={{
+//   height: 1000,
+//   display: "flex",
+//   flexDirection: "column",
+//   background: "purple",
+// }}
