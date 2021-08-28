@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import ButtonsPlusMinus from "./ButtonsPlusMinus";
+import { formatter } from "../utils/utils";
 
 const useStyles = makeStyles({
   container: {
@@ -36,7 +37,12 @@ const useStyles = makeStyles({
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 20,
-    background: "lightblue",
+    background: "gray",
+    boxShadow: "0px 0px 3px 3px black",
+  },
+  titles: {
+    fontSize: "large",
+    textAlign: "center",
   },
   img: {
     width: 200,
@@ -54,9 +60,9 @@ export default function Card({ products, handleClick, cart }) {
           return (
             <div className={classes.individualItemContainer} key={obj.id}>
               <div className={classes.individualItem}>
-                <span>{obj.name}</span>
+                <span className={classes.titles}>{obj.name}</span>
                 <img className={classes.img} src={obj.img} alt={obj.name} />
-                <span>{obj.precio}</span>
+                <span>{formatter.format(obj.precio)}</span>
                 {cart && (
                   <ButtonsPlusMinus
                     cart={cart}

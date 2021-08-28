@@ -43,28 +43,6 @@ const useStyles = makeStyles({
 export default function ButtonsPlusMinus({ cart, handleClick, obj }) {
   const classes = useStyles();
   return (
-    // <ButtonGroup size="small" aria-label="small outlined button group">
-    //   {cart.map((onCart) => onCart.id).includes(obj.id) && (
-    //     <Button
-    //       //classes={{ root: classes.root }}
-    //       className={classes.button}
-    //       onClick={(e) => handleClick(e, obj, false)}
-    //     >
-    //       -
-    //     </Button>
-    //   )}
-    //   {cart.map((onCart) => onCart.id).includes(obj.id) && (
-    //     <Button disabled classes={{ disabled: classes.disabledButton }}>
-    //       {cart.filter((onCart) => onCart.id === obj.id)[0].qty}
-    //     </Button>
-    //   )}
-    //   <Button
-    //     className={classes.button}
-    //     onClick={(e) => handleClick(e, obj, true)}
-    //   >
-    //     +
-    //   </Button>
-    // </ButtonGroup>
     <div>
       {cart.map((onCart) => onCart.id).includes(obj.id) && (
         <button

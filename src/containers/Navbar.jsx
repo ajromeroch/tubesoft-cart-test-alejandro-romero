@@ -86,9 +86,8 @@ export default function Navbar() {
   return (
     <div className={classes.container}>
       <Link to="/" className={classes.logo}>
-        <p>FG Joyas</p>
+        <h2>FG Joyas</h2>
       </Link>
-      <span>Hello from Navbar!</span>
       <div>
         {console.log("active cart", activeCart)}
         {!activeCart ? (
@@ -101,26 +100,6 @@ export default function Navbar() {
             <ShoppingCartOutlined className={classes.icon} />
           </IconButton>
         </Link>
-        {/* style={{ width: 50, backgroundColor: "red" }} */}
-        {/* <div>
-          <Modal
-            open={open}
-            onClose={handleModal}
-            // aria-labelledby="simple-modal-title"
-            // aria-describedby="simple-modal-description"
-          >
-            <Fade in={open}>
-              <div className={classes.modal}>
-                <p>
-                  Hello from Navbar!Hello from Navbar!Hello from Navbar!Hello
-                  from Navbar!Hello from Navbar!Hello from Navbar!Hello from
-                  Navbar!Hello from Navbar!Hello from Navbar!Hello from Navbar!
-                </p>
-                <CartProducts cart={activeCart} />
-              </div>
-            </Fade>
-          </Modal>
-        </div> */}
       </div>
     </div>
   );

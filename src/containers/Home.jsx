@@ -17,6 +17,8 @@ const useStyles = makeStyles({
     height: "100vh",
     width: "80%",
     display: "flex",
+    flexDirection: "column",
+    textAlign: "center",
     marginLeft: "auto",
     marginRight: "auto",
   },
@@ -47,6 +49,11 @@ export default function Home() {
     <div className={classes.container}>
       <Navbar />
       <div className={classes.cardContainer}>
+        {!activeCart ? (
+          <h1>Crea un carro y elige productos</h1>
+        ) : (
+          <h1>Selecciona productos</h1>
+        )}
         <Card
           products={allProducts}
           handleClick={handleClick}
