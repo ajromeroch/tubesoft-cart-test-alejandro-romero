@@ -129,9 +129,3 @@ describe("Carro de compra Redux", () => {
     });
   });
 });
-
-//FALTA
-// CSS
-// Searchbar
-// Producto Unico
-// Docker

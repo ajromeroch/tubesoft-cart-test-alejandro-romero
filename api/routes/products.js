@@ -7,8 +7,5 @@ router.get("/", (req, res, err) => {
     .then((products) => res.status(200).send(products))
     .catch((err) => res.status(400).send(err));
 });
-router.post("/", (req, res, err) => {});
-// router.update('/')
-// router.delete('/')
 
 module.exports = router;
