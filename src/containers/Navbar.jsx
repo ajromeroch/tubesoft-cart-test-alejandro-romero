@@ -48,7 +48,6 @@ export default function Navbar() {
         <h2>FG Joyas</h2>
       </Link>
       <div>
-        {console.log("active cart", activeCart)}
         {!activeCart ? (
           <IconButton className={classes.icon} onClick={handleNewCart}>
             <AddShoppingCartOutlined />

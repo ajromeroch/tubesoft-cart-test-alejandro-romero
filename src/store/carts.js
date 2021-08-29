@@ -21,7 +21,6 @@ const getCarts = createAsyncThunk("GET_CARTS", (req, res) => {
   return axios
     .get("http://localhost:3001/api/carts")
     .then((result) => {
-      console.log("esto retorna el back en getAll", result.data);
       return result.data;
     })
     .catch((err) => console.log(err));
@@ -45,11 +44,9 @@ const updateCart = createAsyncThunk("UDPADTE_CART", (req, res) => {
 
 const selectOtherCart = createAsyncThunk("SELECT_OTHER_CART", (req, res) => {
   const { id } = req;
-  console.log("llego hasta el selectOtherCart");
   return axios
     .get(`http://localhost:3001/api/carts/${id}`)
     .then((res) => {
-      console.log("res.data", res.data);
       return res.data;
     })
     .catch((err) => console.log(err));
@@ -60,7 +57,6 @@ const removeCartFromDB = createAsyncThunk("REMOVE_CART_FROM_DB", (req, res) => {
   return axios
     .delete(`http://localhost:3001/api/carts/${id}`)
     .then((res) => {
-      console.log("res.delete", res.data);
       return res.data;
     })
     .catch((err) => console.log(err));
@@ -109,8 +105,6 @@ const cartsReducer = createReducer(initialVal, {
     state.activeCart = [...auxFilter];
   },
   [getCarts.fulfilled]: (state, action) => {
-    console.log("este s el action.payload", action.payload);
-    console.log("este s el state", state.allCarts);
     state.allCarts = action.payload;
   },
   [selectOtherCart.fulfilled]: (state, action) => {

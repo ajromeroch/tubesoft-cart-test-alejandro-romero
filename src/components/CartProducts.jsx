@@ -74,7 +74,6 @@ export default function CartProducts({
       )}
       {cart &&
         cart.map((onCart) => {
-          console.log("aca llego", onCart.name);
           return (
             <div key={onCart.id} className={classes.individualItem}>
               <img className={classes.img} src={onCart.img} alt={onCart.name} />

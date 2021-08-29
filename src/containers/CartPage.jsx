@@ -85,10 +85,6 @@ export default function CartPage() {
     dispatch(getCarts());
     !activeCart &&
       dispatch(newCart(JSON.parse(`${window.localStorage.getItem("CART")}`)));
-    console.log(
-      "localStorage",
-      JSON.parse(`${window.localStorage.getItem("CART")}`)
-    );
   }, []);
 
   useEffect(() => {
@@ -98,7 +94,6 @@ export default function CartPage() {
 
   return (
     <div className={classes.container}>
-      {console.log("estos son todos los carts desde arriba", allCarts)}
       <Navbar />
       <div className={classes.cartContainer}>
         <CartProducts

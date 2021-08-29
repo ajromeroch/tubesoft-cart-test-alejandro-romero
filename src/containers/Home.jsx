@@ -42,7 +42,6 @@ export default function Home() {
   // Renders all products in initial page
   useEffect(() => {
     dispatch(getAllProducts());
-    console.log("llega de todos lados");
   }, []);
 
   return (
