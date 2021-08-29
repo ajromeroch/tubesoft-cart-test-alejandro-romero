@@ -7,8 +7,6 @@ import {
   deleteAllCart,
 } from "./store/carts";
 
-// (on reducer, first one is previous state, second one is what is passed to reducer )
-
 describe("Carro de compra Redux", () => {
   const initialState = {
     allCarts: [],
@@ -131,46 +129,6 @@ describe("Carro de compra Redux", () => {
     });
   });
 });
-
-// test('should handle a todo being added to an empty list', () => {
-//   const previousState = []
-//   expect(reducer(previousState, todoAdded('Run the tests'))).toEqual([
-//     {
-//       text: 'Run the tests',
-//       completed: false,
-//       id: 0
-//     }
-//   ])
-// })
-
-// test('should handle a todo being added to an existing list', () => {
-//   const previousState = [
-//     {
-//       text: 'Run the tests',
-//       completed: true,
-//       id: 0
-//     }
-//   ]
-//   expect(reducer(previousState, todoAdded('Use Redux'))).toEqual([
-//     {
-//       text: 'Run the tests',
-//       completed: true,
-//       id: 0
-//     },
-//     {
-//       text: 'Use Redux',
-//       completed: false,
-//       id: 1
-//     }
-//   ])
-// })
-
-// add cart to redux
-// update cart to redux
-// remove cart from redux
-// add cart to BD
-// update cart to BD
-// remove cart from BD
 
 //FALTA
 // CSS

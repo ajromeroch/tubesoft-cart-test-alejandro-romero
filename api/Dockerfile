@@ -5,7 +5,6 @@ COPY ./package-lock.json package-lock.json
 #COPY ./server.js server.js
 COPY . .
 RUN ["npm", "install"]
-#RUN ["node", "/src/db/seed.js"]
 CMD ["npm", "start"]
 EXPOSE 8080
 

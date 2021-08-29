@@ -14,7 +14,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node ./api/server.js"
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": [

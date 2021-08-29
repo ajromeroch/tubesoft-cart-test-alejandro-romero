@@ -68,7 +68,7 @@ const removeCartFromDB = createAsyncThunk("REMOVE_CART_FROM_DB", (req, res) => {
 
 const cartsReducer = createReducer(initialVal, {
   [newCart]: (state, action) => {
-    state.activeCart = [];
+    state.activeCart = action.payload || [];
   },
   [addToCart]: (state, action) => {
     if (action.payload.qty > 1) {
@@ -102,7 +102,6 @@ const cartsReducer = createReducer(initialVal, {
     state.activeCart = null;
     state.actualCartId = 0;
   },
-
   [cancelFromCart]: (state, action) => {
     let auxFilter = state.activeCart.filter(
       (onCart) => onCart.id !== action.payload.id

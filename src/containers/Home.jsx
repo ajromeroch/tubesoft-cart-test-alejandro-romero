@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
-//import Sidebar from "./Sidebar";
 import Card from "../components/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProducts } from "../store/products";
@@ -43,6 +42,7 @@ export default function Home() {
   // Renders all products in initial page
   useEffect(() => {
     dispatch(getAllProducts());
+    console.log("llega de todos lados");
   }, []);
 
   return (

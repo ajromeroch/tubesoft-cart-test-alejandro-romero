@@ -6,8 +6,6 @@ const db = require("./db/db");
 const cors = require("cors");
 const PORT = 3001;
 
-//app.use("/", () => console.log("esa corriendo"));
-
 //Convierte los body request en formato JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

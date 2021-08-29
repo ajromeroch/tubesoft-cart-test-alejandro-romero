@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import {
+  newCart,
   addToCart,
   removeFromCart,
   cancelFromCart,
@@ -45,7 +46,7 @@ export default function CartPage() {
     const auxQty = !auxFilter ? 0 : auxFilter.qty;
     plusMinus
       ? dispatch(addToCart({ ...obj, qty: auxQty + 1 }))
-      : dispatch(removeFromCart({ ...obj, qty: auxQty - 1 })); //tengo la validacion del boton! esa es
+      : dispatch(removeFromCart({ ...obj, qty: auxQty - 1 }));
   };
 
   const handleCancel = (e, obj) => {
@@ -57,6 +58,7 @@ export default function CartPage() {
     e.preventDefault();
     dispatch(saveCart(activeCart));
     dispatch(deleteAllCart());
+    window.localStorage.clear();
     history.push("/");
   };
 
@@ -68,19 +70,31 @@ export default function CartPage() {
   const handleUpdate = (e) => {
     e.preventDefault();
     dispatch(updateCart([activeCart, actualCartId]));
+    window.localStorage.clear();
     history.push("/");
   };
 
   const handleCancelCart = (e) => {
     e.preventDefault();
     dispatch(removeCartFromDB(actualCartId));
+    window.localStorage.clear();
     history.push("/");
   };
 
-  //aca tengo que ver que hacer para que se renderice de forma automatica
   useEffect(() => {
     dispatch(getCarts());
+    !activeCart &&
+      dispatch(newCart(JSON.parse(`${window.localStorage.getItem("CART")}`)));
+    console.log(
+      "localStorage",
+      JSON.parse(`${window.localStorage.getItem("CART")}`)
+    );
   }, []);
+
+  useEffect(() => {
+    if (activeCart !== null)
+      window.localStorage.setItem("CART", JSON.stringify(activeCart));
+  }, [activeCart]);
 
   return (
     <div className={classes.container}>

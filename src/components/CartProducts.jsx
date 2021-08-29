@@ -24,6 +24,9 @@ const useStyles = makeStyles({
     borderRadius: 10,
     background: "gray",
     boxShadow: "0px 0px 1px 1px black",
+    "@media(max-width: 420px)": {
+      flexDirection: "column",
+    },
   },
   img: {
     width: 200,
@@ -44,7 +47,6 @@ const useStyles = makeStyles({
   },
 });
 
-//aca tenemos que agregar un boton tambien que pueda "cerrar" el modal. no se si aca pero en algun lado
 export default function CartProducts({
   cart,
   allCarts,
